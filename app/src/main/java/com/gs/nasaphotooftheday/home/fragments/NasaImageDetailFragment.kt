@@ -21,7 +21,7 @@ class NasaImageDetailFragment : Fragment() {
     private val binding get() = fragmentSelectYourBrandBinding
     @Inject
     lateinit var viewModelFactory: ViewModelFactory
-    lateinit var viewModelCarBrand: FragmentFavoritesImagesViewModel
+    private lateinit var viewModelCarBrand: FragmentFavoritesImagesViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -44,13 +44,16 @@ class NasaImageDetailFragment : Fragment() {
     }
 
     private fun provideStates(it: FragmentFavoriteViewStates?) {
-
+        //Do Nothing
     }
 
     private fun provideEvents(it: HomeActivityViewEvents) {
+        //Do Nothing
     }
 
-
+    /**
+     * Initialise viewbindings
+     */
     private fun initViewModelAndBindings() {
         viewModelCarBrand =
             ViewModelProvider(
@@ -64,6 +67,9 @@ class NasaImageDetailFragment : Fragment() {
         }
     }
 
+    /**
+     * Call all the favorite from the database
+     */
     private fun callLogosDesignAndNameApi() {
         viewModelCarBrand.getAllFavoriteImages()
     }

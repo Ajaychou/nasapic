@@ -35,7 +35,10 @@ class FragmentNasaImageOfTheDayViewModel @ViewModelInject constructor(
         mutableLiveDataStates.value = HomeActivityViewStates(false, nasaImageModel, false, false)
     }
 
-    internal fun getLogoAndNmeApi(date:String) {
+    /**
+     * Api call
+     */
+    internal fun getNasaImageApi(date:String) {
         viewModelScope.launch {
             repository.getNameAndLogos(date).onEach {
                 processCarsNameLogoResponse(it)
@@ -66,6 +69,9 @@ class FragmentNasaImageOfTheDayViewModel @ViewModelInject constructor(
         mutableImageListingEvents.value = Event(HomeActivityViewEvents.OnClickCalenderOpen)
     }
 
+    /**
+     * Handle the response based on result
+     */
     private fun processCarsNameLogoResponse(it: DataState<List<NasaImageModel>>) {
         when (it) {
             is DataState.Success -> {

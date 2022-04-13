@@ -1,5 +1,8 @@
 package com.gs.nasaphotooftheday.home.entity
 
+/**
+ * This file is used to map with network data
+ */
 data class NasaImageModel(
     val date: String,
     val explaination: String,

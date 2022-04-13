@@ -34,6 +34,9 @@ class FragmentFavoritesImagesViewModel @ViewModelInject constructor(private val 
         mutableLiveDataStates.value = FragmentFavoriteViewStates(false, listOf())
     }
 
+    /**
+     * Call for the favorite images
+     */
     internal fun getAllFavoriteImages() {
         viewModelScope.launch {
             repository.getAllTheFavorites().onEach {
@@ -43,6 +46,9 @@ class FragmentFavoritesImagesViewModel @ViewModelInject constructor(private val 
         }
     }
 
+    /**
+     * Handle response based on result
+     */
     private fun processCarsNameLogoResponse(it: DataState<List<NasaImageModel>>) {
         when (it) {
             is DataState.Success -> {

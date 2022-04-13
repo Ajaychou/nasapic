@@ -6,7 +6,6 @@ import retrofit2.http.Query
 
 interface Repository {
 
-
     @GET(Constants.APOD)
     suspend fun getTrueCallerScreenImages(
         @Query("date") date: String,

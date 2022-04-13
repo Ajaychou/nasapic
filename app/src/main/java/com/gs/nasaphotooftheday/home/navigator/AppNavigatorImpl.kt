@@ -8,6 +8,10 @@ import com.gs.nasaphotooftheday.home.fragments.NasaImageListingFragment
 import com.gs.nasaphotooftheday.home.repository.Constants
 import javax.inject.Inject
 
+/**
+ * AppNavigatorImpl file
+ * This file is used to make transaction between the fragments
+ */
 class AppNavigatorImpl @Inject constructor(private val activity: FragmentActivity) : AppNavigator {
     override fun navigateTo(screen: Screens, data: Int) {
         val fragment = when (screen) {

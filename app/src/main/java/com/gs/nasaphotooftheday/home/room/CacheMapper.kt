@@ -4,6 +4,9 @@ import com.gs.nasaphotooftheday.home.entity.NasaImageModel
 import com.gs.nasaphotooftheday.home.util.EntityMapper
 import javax.inject.Inject
 
+/**
+ * This file will mat the network data with database
+ */
 class CacheMapper @Inject constructor() :
     EntityMapper<NasaImageCacheEntity, NasaImageModel> {
 

@@ -13,6 +13,11 @@ import kotlinx.coroutines.flow.flow
 import java.net.UnknownHostException
 import javax.inject.Inject
 
+/**
+ * This is the repository file.
+ * This will be used to make network call and get the updated data.
+ * This will also update the database once it receive the data successfully
+ */
 class GetImageRepository @Inject constructor(
     private val dao: NasaImageDao,
     private val retrofit: Repository,

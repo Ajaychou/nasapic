@@ -58,6 +58,9 @@ class NasaImageListingFragment : Fragment() {
         return root
     }
 
+    /**
+     * This method  is used to initialise the view events and states
+     */
     private fun initStateEvents() {
         viewModelCarBrand.mutableLiveDataEvents.observe(viewLifecycleOwner) { event ->
             event.handleEvent { provideEvents(it) }
@@ -67,6 +70,9 @@ class NasaImageListingFragment : Fragment() {
         }
     }
 
+    /**
+     * View states from view model
+     */
     private fun provideStates(it: HomeActivityViewStates?) {
         if (it != null) {
             homeActivityViewStates = it
@@ -76,6 +82,9 @@ class NasaImageListingFragment : Fragment() {
         }
     }
 
+    /**
+     * View events from viewodel
+     */
     private fun provideEvents(it: HomeActivityViewEvents) {
         when (it) {
             is HomeActivityViewEvents.OnClickPassData -> {
@@ -104,6 +113,9 @@ class NasaImageListingFragment : Fragment() {
         }
     }
 
+    /**
+     * This method is used to show calender to select the date and call the api
+     */
     private fun showCalender() {
         val mcurrentDate = Calendar.getInstance()
         var mYear = mcurrentDate[Calendar.YEAR]
@@ -133,7 +145,9 @@ class NasaImageListingFragment : Fragment() {
         mDatePicker.show()
     }
 
-
+    /**
+     * Initialise bindings
+     */
     private fun initViewModelAndBindings() {
         viewModelCarBrand =
             ViewModelProvider(
@@ -147,8 +161,12 @@ class NasaImageListingFragment : Fragment() {
         }
     }
 
+    /**
+     * Network call for nasa image
+     * @param date : current date
+     */
     private fun callLogosDesignAndNameApi(date: String) {
-        viewModelCarBrand.getLogoAndNmeApi(date)
+        viewModelCarBrand.getNasaImageApi(date)
     }
 
     /**

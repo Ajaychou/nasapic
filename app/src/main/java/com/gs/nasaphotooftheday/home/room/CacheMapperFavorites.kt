@@ -5,6 +5,9 @@ import com.gs.nasaphotooftheday.home.util.EntityMapper
 import java.util.*
 import javax.inject.Inject
 
+/**
+ * This will used to map all the favorite images to database
+ */
 class CacheMapperFavorites @Inject constructor() :
     EntityMapper<NasaImagesFavoritesCacheEntity, NasaImageModel> {
 

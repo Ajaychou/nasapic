@@ -5,6 +5,9 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 
+/**
+ * Data access object file for all nasa images
+ */
 @Dao
 interface NasaImageDao {
 

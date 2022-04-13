@@ -14,6 +14,9 @@ import dagger.hilt.components.SingletonComponent
 import dagger.multibindings.IntoMap
 import javax.inject.Provider
 
+/**
+ * This file is used to initialise the viewmodels and their parameters
+ */
 @Module
 @InstallIn(SingletonComponent::class)
 class ViewModelModules {

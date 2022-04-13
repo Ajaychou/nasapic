@@ -4,13 +4,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.gs.nasaphotooftheday.R
 import com.gs.nasaphotooftheday.home.entity.NasaImageModel
-import com.gs.nasaphotooftheday.home.interfaces.BrandListeners
 import com.squareup.picasso.Picasso
 
+/**
+ * This file is used to show all the favorite files
+ */
 class FavoritesAdapter(
     private val list: List<NasaImageModel>) :
     RecyclerView.Adapter<FavoritesAdapter.Viewolder>() {
@@ -23,7 +24,7 @@ class FavoritesAdapter(
     }
 
     override fun onBindViewHolder(holder: Viewolder, position: Int) {
-        Picasso.get().load(list[position].hdUrl).into(holder.iv_logo)
+        Picasso.get().load(list[position].hdUrl).into(holder.iv_image)
     }
 
     override fun getItemCount(): Int {
@@ -31,6 +32,6 @@ class FavoritesAdapter(
     }
 
     inner class Viewolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val iv_logo = itemView.findViewById<ImageView>(R.id.iv_banner)
+        val iv_image = itemView.findViewById<ImageView>(R.id.iv_banner)
     }
 }

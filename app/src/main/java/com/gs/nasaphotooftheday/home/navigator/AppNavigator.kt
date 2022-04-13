@@ -1,5 +1,8 @@
 package com.gs.nasaphotooftheday.home.navigator
 
+/**
+ * Fragments names
+ */
 enum class Screens{
     IMAGES_LIST, IMAGES_DETAIL
 }

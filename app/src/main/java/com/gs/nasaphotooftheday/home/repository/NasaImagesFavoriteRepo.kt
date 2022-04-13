@@ -8,6 +8,10 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
+/**
+ * NasaImagesFavoriteRepo file
+ * This file is used to return all the favorite images
+ */
 class NasaImagesFavoriteRepo @Inject constructor(
     private val dao: NasaImageDao,
     private val cacheMapperForFavorites: CacheMapperFavorites,
