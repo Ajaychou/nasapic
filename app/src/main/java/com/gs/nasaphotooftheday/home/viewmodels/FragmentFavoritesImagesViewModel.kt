@@ -38,6 +38,7 @@ class FragmentFavoritesImagesViewModel @ViewModelInject constructor(private val 
      * Call for the favorite images
      */
     internal fun getAllFavoriteImages() {
+
         viewModelScope.launch {
             repository.getAllTheFavorites().onEach {
                 processCarsNameLogoResponse(it)

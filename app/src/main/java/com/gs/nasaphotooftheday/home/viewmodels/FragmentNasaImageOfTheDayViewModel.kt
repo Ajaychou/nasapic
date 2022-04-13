@@ -39,6 +39,9 @@ class FragmentNasaImageOfTheDayViewModel @ViewModelInject constructor(
      * Api call
      */
     internal fun getNasaImageApi(date:String) {
+        mutableLiveDataStates.value =
+            mutableLiveDataStates.value?.copy(
+                isFavorite = false)
         viewModelScope.launch {
             repository.getNameAndLogos(date).onEach {
                 processCarsNameLogoResponse(it)
