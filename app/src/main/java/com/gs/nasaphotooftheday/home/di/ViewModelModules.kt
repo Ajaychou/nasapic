@@ -1,7 +1,7 @@
 package com.acho.app.sellcar.di
 
 import androidx.lifecycle.ViewModel
-import com.acho.app.sellcar.repository.CarsLogoNameRepository
+import com.acho.app.sellcar.repository.GetImageRepository
 import com.gs.nasaphotooftheday.home.viewmodels.FragmentNasaImageOfTheDayViewModel
 import com.gs.nasaphotooftheday.home.di.ViewModelFactory
 import com.gs.nasaphotooftheday.home.repository.NasaImagesFavoriteRepo
@@ -26,7 +26,7 @@ class ViewModelModules {
     @Provides
     @ViewModelKey(FragmentNasaImageOfTheDayViewModel::class)
     @IntoMap
-    fun providesSelectYourCarBrandViewModel(repositoryModule: CarsLogoNameRepository, repository: NasaImagesFavoriteRepo): ViewModel {
+    fun providesSelectYourCarBrandViewModel(repositoryModule: GetImageRepository, repository: NasaImagesFavoriteRepo): ViewModel {
         return FragmentNasaImageOfTheDayViewModel(repositoryModule,repository)
     }
 

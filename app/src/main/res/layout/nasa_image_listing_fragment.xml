@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:tools="http://schemas.android.com/tools"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
@@ -18,7 +17,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white">
+            android:background="?attr/background_color">
 
             <ImageView
                 android:id="@+id/iv_nasa_image"
@@ -47,6 +46,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:textColor="?attr/text_color"
                 android:text="@{viewModel.liveDataStatesRegistrationCar.nasaImageModel.title}"
                 app:layout_constraintStart_toStartOf="@id/guideline_start"
                 app:layout_constraintTop_toBottomOf="@+id/iv_nasa_image" />
@@ -56,6 +56,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:textColor="?attr/text_color"
                 android:text="@{viewModel.liveDataStatesRegistrationCar.nasaImageModel.explaination}"
                 app:layout_constraintStart_toStartOf="@id/guideline_start"
                 app:layout_constraintTop_toBottomOf="@+id/tv_title" />
@@ -80,7 +81,7 @@
                 android:layout_height="50dp"
                 android:onClick="@{()-> viewModel.onClickPassData()}"
                 android:layout_margin="20dp"
-                android:src="@drawable/ic_baseline_favorite_border_24"
+                setDrawableOnFavorite="@{viewModel.liveDataStatesRegistrationCar}"
                 app:layout_constraintEnd_toEndOf="@+id/iv_nasa_image"
                 app:layout_constraintTop_toTopOf="@id/iv_nasa_image" />
 

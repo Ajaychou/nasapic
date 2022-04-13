@@ -5,7 +5,7 @@ import com.gs.nasaphotooftheday.home.models.NasaImageModelNetworkMapper
 import com.gs.nasaphotooftheday.home.repository.Constants
 import com.gs.nasaphotooftheday.home.repository.Repository
 import com.gs.nasaphotooftheday.home.room.CacheMapper
-import com.gs.nasaphotooftheday.home.room.CarsNameLogoDao
+import com.gs.nasaphotooftheday.home.room.NasaImageDao
 import com.gs.nasaphotooftheday.home.util.DataState
 import com.gs.nasaphotooftheday.home.util.NetworkMapper
 import kotlinx.coroutines.flow.Flow
@@ -13,8 +13,8 @@ import kotlinx.coroutines.flow.flow
 import java.net.UnknownHostException
 import javax.inject.Inject
 
-class CarsLogoNameRepository @Inject constructor(
-    private val dao: CarsNameLogoDao,
+class GetImageRepository @Inject constructor(
+    private val dao: NasaImageDao,
     private val retrofit: Repository,
     private val cacheMapper: CacheMapper,
     private val networkMapper: NetworkMapper

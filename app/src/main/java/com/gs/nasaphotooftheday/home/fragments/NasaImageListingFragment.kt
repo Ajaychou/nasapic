@@ -6,18 +6,17 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.res.ResourcesCompat
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
-import com.gs.nasaphotooftheday.R
 import com.gs.nasaphotooftheday.databinding.NasaImageListingFragmentBinding
 import com.gs.nasaphotooftheday.home.HomeActivityViewEvents
 import com.gs.nasaphotooftheday.home.HomeActivityViewStates
 import com.gs.nasaphotooftheday.home.di.ViewModelFactory
 import com.gs.nasaphotooftheday.home.navigator.AppNavigator
 import com.gs.nasaphotooftheday.home.navigator.Screens
-import com.gs.nasaphotooftheday.home.room.CarsNameLogoDao
+import com.gs.nasaphotooftheday.home.room.NasaImageDao
 import com.gs.nasaphotooftheday.home.room.NasaImagesFavoritesCacheEntity
 import com.gs.nasaphotooftheday.home.viewmodels.FragmentNasaImageOfTheDayViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -41,8 +40,8 @@ class NasaImageListingFragment : Fragment() {
     lateinit var navigator: AppNavigator
 
     @Inject
-    lateinit var dao: CarsNameLogoDao
-    private var date: String? = null
+    lateinit var dao: NasaImageDao
+    private var date: String = ""
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -52,7 +51,9 @@ class NasaImageListingFragment : Fragment() {
             NasaImageListingFragmentBinding.inflate(inflater, container, false)
         val root: View = binding.root
         initViewModelAndBindings()
-        callLogosDesignAndNameApi(getCurrentDate())
+        val dateTobePassed= date.ifEmpty { getCurrentDate() }
+            callLogosDesignAndNameApi(dateTobePassed)
+
         initStateEvents()
         return root
     }
@@ -70,16 +71,14 @@ class NasaImageListingFragment : Fragment() {
         if (it != null) {
             homeActivityViewStates = it
         }
+        if (it?.noInternet == true){
+            Toast.makeText(requireContext(),"No Internet available",Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun provideEvents(it: HomeActivityViewEvents) {
         when (it) {
             is HomeActivityViewEvents.OnClickPassData -> {
-                binding.ivFavorite.setImageDrawable(context?.resources?.let { it1 ->
-                    ResourcesCompat.getDrawable(
-                        it1, R.drawable.filled_heart, null
-                    )
-                })
                 lifecycleScope.launch {
                     val random = Random()
                     val nasaImagesFavoritesCacheEntity = NasaImagesFavoritesCacheEntity(
@@ -123,6 +122,7 @@ class NasaImageListingFragment : Fragment() {
                 mDay = selectedday;
                 mMonth = selectedmonth;
                 mYear = selectedyear;
+                date = sdf.format(myCalendar.getTime())
                 callLogosDesignAndNameApi(sdf.format(myCalendar.getTime()))
             },
             mYear,

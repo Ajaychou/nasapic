@@ -5,24 +5,24 @@ import com.gs.nasaphotooftheday.home.util.EntityMapper
 import javax.inject.Inject
 
 class CacheMapper @Inject constructor() :
-    EntityMapper<CarsNameAndModelCacheEntity, NasaImageModel> {
+    EntityMapper<NasaImageCacheEntity, NasaImageModel> {
 
-    override fun mapFromEntity(entity: CarsNameAndModelCacheEntity): NasaImageModel {
+    override fun mapFromEntity(entity: NasaImageCacheEntity): NasaImageModel {
         return NasaImageModel(
             entity.date, entity.explaination,
             entity.hdurl, entity.mediatype, entity.serviceVersion, entity.title, entity.url
         )
     }
 
-    override fun mapToEntity(domainModel: NasaImageModel): CarsNameAndModelCacheEntity {
-        return CarsNameAndModelCacheEntity(
+    override fun mapToEntity(domainModel: NasaImageModel): NasaImageCacheEntity {
+        return NasaImageCacheEntity(
             1, domainModel.date, domainModel.explaination,
             domainModel.hdUrl, domainModel.mediaType, domainModel.serviceVirsion,
             domainModel.title, domainModel.url
         )
     }
 
-    fun mapFromEntityList(entities: List<CarsNameAndModelCacheEntity>): List<NasaImageModel> {
+    fun mapFromEntityList(entities: List<NasaImageCacheEntity>): List<NasaImageModel> {
         return entities.map { mapFromEntity(it) }
     }
 

@@ -10,10 +10,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:name=".NasaPhotoOfTheDayApp"
-        android:theme="@style/Theme.NasaPhotoOfTheDay">
+        android:theme="@style/Theme.Light">
         <activity
             android:name=".home.MainActivity"
             android:screenOrientation="fullSensor"
+
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

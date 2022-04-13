@@ -17,10 +17,8 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class NasaImageDetailFragment : Fragment() {
 
-
     private lateinit var fragmentSelectYourBrandBinding: FragmentFavouritesBinding
     private val binding get() = fragmentSelectYourBrandBinding
-
     @Inject
     lateinit var viewModelFactory: ViewModelFactory
     lateinit var viewModelCarBrand: FragmentFavoritesImagesViewModel

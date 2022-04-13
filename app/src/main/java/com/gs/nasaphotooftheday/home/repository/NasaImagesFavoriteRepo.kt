@@ -2,15 +2,14 @@ package com.gs.nasaphotooftheday.home.repository
 
 import com.gs.nasaphotooftheday.home.entity.NasaImageModel
 import com.gs.nasaphotooftheday.home.room.CacheMapperFavorites
-import com.gs.nasaphotooftheday.home.room.CarsNameLogoDao
-import com.gs.nasaphotooftheday.home.room.NasaImagesFavoritesCacheEntity
+import com.gs.nasaphotooftheday.home.room.NasaImageDao
 import com.gs.nasaphotooftheday.home.util.DataState
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
 class NasaImagesFavoriteRepo @Inject constructor(
-    private val dao: CarsNameLogoDao,
+    private val dao: NasaImageDao,
     private val cacheMapperForFavorites: CacheMapperFavorites,
 ) {
     suspend fun getAllTheFavorites(): Flow<DataState<List<NasaImageModel>>> =

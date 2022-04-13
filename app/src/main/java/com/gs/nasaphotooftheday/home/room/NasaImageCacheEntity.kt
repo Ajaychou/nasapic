@@ -5,8 +5,8 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
-@Entity(tableName = "cars_name_and_model_cache")
-data class CarsNameAndModelCacheEntity(
+@Entity(tableName = "nasa_images")
+data class NasaImageCacheEntity(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
     val id: Int,

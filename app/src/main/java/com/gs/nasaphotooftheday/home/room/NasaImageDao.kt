@@ -4,16 +4,15 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.gs.nasaphotooftheday.home.room.CarsNameAndModelCacheEntity
 
 @Dao
-interface CarsNameLogoDao {
+interface NasaImageDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertNameLogoEntity(cacheEntity: CarsNameAndModelCacheEntity)
+    suspend fun insertNameLogoEntity(cacheEntity: NasaImageCacheEntity)
 
-    @Query("SELECT * from cars_name_and_model_cache")
-    suspend fun getLogosAndName() : List<CarsNameAndModelCacheEntity>
+    @Query("SELECT * from nasa_images")
+    suspend fun getLogosAndName() : List<NasaImageCacheEntity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertFavorites(cacheEntity: NasaImagesFavoritesCacheEntity)

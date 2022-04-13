@@ -5,20 +5,19 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.acho.app.sellcar.repository.CarsLogoNameRepository
+import com.acho.app.sellcar.repository.GetImageRepository
 import com.gs.nasaphotooftheday.home.HomeActivityViewEvents
 import com.gs.nasaphotooftheday.home.HomeActivityViewStates
 import com.gs.nasaphotooftheday.home.di.Event
 import com.gs.nasaphotooftheday.home.entity.NasaImageModel
 import com.gs.nasaphotooftheday.home.repository.NasaImagesFavoriteRepo
-import com.gs.nasaphotooftheday.home.room.CarsNameLogoDao
 import com.gs.nasaphotooftheday.home.util.DataState
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 
 class FragmentNasaImageOfTheDayViewModel @ViewModelInject constructor(
-    private val repository: CarsLogoNameRepository,
+    private val repository: GetImageRepository,
     private val repositoryFavorite: NasaImagesFavoriteRepo) :
     ViewModel() {
 
@@ -33,7 +32,7 @@ class FragmentNasaImageOfTheDayViewModel @ViewModelInject constructor(
 
     init {
         val nasaImageModel= NasaImageModel("","","","","","","")
-        mutableLiveDataStates.value = HomeActivityViewStates(false, nasaImageModel)
+        mutableLiveDataStates.value = HomeActivityViewStates(false, nasaImageModel, false, false)
     }
 
     internal fun getLogoAndNmeApi(date:String) {
@@ -49,6 +48,7 @@ class FragmentNasaImageOfTheDayViewModel @ViewModelInject constructor(
      * Click event of the Image
      */
     fun onClickPassData() {
+        mutableLiveDataStates.value = mutableLiveDataStates.value?.copy(isFavorite = true)
         mutableImageListingEvents.value = Event(HomeActivityViewEvents.OnClickPassData)
     }
 
@@ -72,20 +72,23 @@ class FragmentNasaImageOfTheDayViewModel @ViewModelInject constructor(
                 mutableLiveDataStates.value =
                     mutableLiveDataStates.value?.copy(
                         isLoading = false,
-                        nasaImageModel = it.data[0]
+                        nasaImageModel = it.data[0],
+                        noInternet = false
                     )
             }
             is DataState.Failure -> {
                 mutableLiveDataStates.value =
                     mutableLiveDataStates.value?.copy(
-                        isLoading = false
+                        isLoading = false,
+                        noInternet = false
                     )
             }
             is DataState.OnNoInternet -> {
                 mutableLiveDataStates.value =
                     mutableLiveDataStates.value?.copy(
                         isLoading = false,
-                        nasaImageModel = it.data[0]
+                        nasaImageModel = it.data[0],
+                        noInternet = true
 
                     )
             }

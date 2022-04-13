@@ -11,15 +11,15 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object CarsLogoNameRoomModule {
+object NasaImageRoomModule {
 
     @Singleton
     @Provides
-    fun providesCarsNameLogoDB(@ApplicationContext context: Context): CarsNameLogoDatabase {
+    fun providesNasaImageDB(@ApplicationContext context: Context): NasaImageDatabase {
         return Room.databaseBuilder(
             context,
-            CarsNameLogoDatabase::class.java,
-            CarsNameLogoDatabase.DATABASE_NAME
+            NasaImageDatabase::class.java,
+            NasaImageDatabase.DATABASE_NAME
         )
             .fallbackToDestructiveMigration()
             .build()
@@ -27,7 +27,7 @@ object CarsLogoNameRoomModule {
 
     @Singleton
     @Provides
-    fun providesRoomNameDao(carsNameLogoDatabase: CarsNameLogoDatabase): CarsNameLogoDao {
-        return carsNameLogoDatabase.getCarsNameLogoDao()
+    fun providesRoomNameDao(nasaImageDatabase: NasaImageDatabase): NasaImageDao {
+        return nasaImageDatabase.getCarsNameLogoDao()
     }
 }
