@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "C:\\Users\\choud\\StudioProjects\\NasaPhotoOfTheDay\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_favourites.xml",
+        "source": "C:\\Users\\choud\\StudioProjects\\NasaPhotoOfTheDay\\app\\src\\main\\res\\layout\\fragment_favourites.xml"
+    },
+    {
+        "merged": "C:\\Users\\choud\\StudioProjects\\NasaPhotoOfTheDay\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\nasa_image_listing_fragment.xml",
+        "source": "C:\\Users\\choud\\StudioProjects\\NasaPhotoOfTheDay\\app\\src\\main\\res\\layout\\nasa_image_listing_fragment.xml"
+    }
+]

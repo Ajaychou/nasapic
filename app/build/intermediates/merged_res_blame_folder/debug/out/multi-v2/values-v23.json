@@ -1,0 +1,93 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\choud\\StudioProjects\\NasaPhotoOfTheDay\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v23\\values-v23.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\choud\\.gradle\\caches\\transforms-3\\4d9029e3bd4b51c4a68033abab7842c9\\transformed\\appcompat-1.4.1\\res\\values-v23\\values-v23.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,20,34,35,36,39,43,44,45,46",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,190,325,400,487,1371,2267,2386,2513,2735,2959,3074,3181,3294",
+                        "endLines": "2,3,4,5,19,33,34,35,38,42,43,44,45,49",
+                        "endColumns": "134,134,74,86,12,12,118,126,12,12,114,106,112,12",
+                        "endOffsets": "185,320,395,482,1366,2262,2381,2508,2730,2954,3069,3176,3289,3519"
+                    },
+                    "to": {
+                        "startLines": "5,6,7,8,9,23,37,38,39,42,46,47,48,49",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "243,378,513,588,675,1559,2455,2574,2701,2923,3147,3262,3369,3482",
+                        "endLines": "5,6,7,8,22,36,37,38,41,45,46,47,48,52",
+                        "endColumns": "134,134,74,86,12,12,118,126,12,12,114,106,112,12",
+                        "endOffsets": "373,508,583,670,1554,2450,2569,2696,2918,3142,3257,3364,3477,3707"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\choud\\.gradle\\caches\\transforms-3\\cafa584ff22d6bef46f86f586bc8fe7e\\transformed\\cardview-1.0.0\\res\\values-v23\\values-v23.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "4",
+                        "endColumns": "12",
+                        "endOffsets": "200"
+                    },
+                    "to": {
+                        "startLines": "53",
+                        "startColumns": "4",
+                        "startOffsets": "3712",
+                        "endLines": "55",
+                        "endColumns": "12",
+                        "endOffsets": "3857"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\choud\\.gradle\\caches\\transforms-3\\5ccf5f372c7a1457bf9b605bf7e9a628\\transformed\\material-1.5.0\\res\\values-v23\\values-v23.xml",
+                    "from": {
+                        "startLines": "2,5,8,13,17,20,23,26,31,34,38",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,271,481,801,1038,1245,1452,1655,1987,2189,2454",
+                        "endLines": "4,7,12,16,19,22,25,30,33,37,41",
+                        "endColumns": "10,10,10,10,10,10,10,10,10,10,10",
+                        "endOffsets": "266,476,796,1033,1240,1447,1650,1982,2184,2449,2722"
+                    },
+                    "to": {
+                        "startLines": "56,59,62,67,71,74,77,80,85,88,92",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "3862,4078,4288,4608,4845,5052,5259,5462,5794,5996,6261",
+                        "endLines": "58,61,66,70,73,76,79,84,87,91,95",
+                        "endColumns": "10,10,10,10,10,10,10,10,10,10,10",
+                        "endOffsets": "4073,4283,4603,4840,5047,5254,5457,5789,5991,6256,6529"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\choud\\.gradle\\caches\\transforms-3\\cc179c6cb538903b8f76a8900a84d905\\transformed\\work-runtime-2.7.1\\res\\values-v23\\values-v23.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,121",
+                        "endColumns": "65,62",
+                        "endOffsets": "116,179"
+                    },
+                    "to": {
+                        "startLines": "3,4",
+                        "startColumns": "4,4",
+                        "startOffsets": "114,180",
+                        "endColumns": "65,62",
+                        "endOffsets": "175,238"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\choud\\.gradle\\caches\\transforms-3\\bc3ce324e35596bdea7f2bb862800811\\transformed\\work-gcm-2.7.1\\res\\values-v23\\values-v23.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "58",
+                        "endOffsets": "109"
+                    }
+                }
+            ]
+        }
+    ]
+}

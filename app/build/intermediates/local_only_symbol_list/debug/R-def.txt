@@ -1,0 +1,39 @@
+R_DEF: Internal format may change without notice
+local
+attr? background_color
+attr? text_color
+color Snow
+color black
+color purple_200
+color purple_500
+color purple_700
+color teal_200
+color teal_700
+color white
+drawable filled_heart
+drawable ic_baseline_favorite_border_24
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+id fab_favourite
+id guideline_end
+id guideline_start
+id iv_banner
+id iv_favorite
+id iv_nasa_image
+id main_container
+id progressBar
+id rv_favorite
+id tv_explanation
+id tv_select_date
+id tv_title
+id view
+layout activity_main
+layout fragment_favourites
+layout nasa_image_listing_fragment
+layout select_your_vehicle_brand
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+style Theme.Dark
+style Theme.Light
+styleable dark_theme background_color text_color
